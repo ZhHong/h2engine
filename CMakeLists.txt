@@ -4,7 +4,7 @@ include_directories(${PROJECT_SOURCE_DIR}/fflib ${PROJECT_SOURCE_DIR}/lib3party 
             ${PROJECT_SOURCE_DIR}/lib3party/php ${PROJECT_SOURCE_DIR}/lib3party/php/embed 
             ${PROJECT_SOURCE_DIR}/lib3party/php/main ${PROJECT_SOURCE_DIR}/lib3party/php/Zend
             ${PROJECT_SOURCE_DIR}/lib3party/php/TSRM
-            /usr/include/mysql/ /usr/include/python2.7/ /usr/include/python2.6/ 
+            /usr/include/mysql/ /usr/include/python2.7/
 )
 link_directories(/usr/local/lib /usr/lib64/mysql ${PROJECT_SOURCE_DIR})
 
@@ -82,7 +82,7 @@ add_executable(h2engine ${ENGINE_SRC_LIST})
 target_link_libraries(h2engine pthread dl mysqlclient crypto ssl z curl)
 
 add_executable(h2workerpy ${WORKER_PY_SRC_LIST})
-target_link_libraries(h2workerpy pthread dl mysqlclient crypto ssl z curl python2.6)
+target_link_libraries(h2workerpy pthread dl mysqlclient crypto ssl z curl python2.7)
 
 add_executable(h2workerlua ${WORKER_LUA_SRC_LIST})
 target_link_libraries(h2workerlua pthread dl mysqlclient crypto ssl z curl lua)
