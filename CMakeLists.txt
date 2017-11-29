@@ -1,5 +1,5 @@
 cmake_minimum_required(VERSION 2.8)
-project(h2engine)
+project(wormhole)
 include_directories(${PROJECT_SOURCE_DIR}/fflib ${PROJECT_SOURCE_DIR}/lib3party ${PROJECT_SOURCE_DIR}/src  
             ${PROJECT_SOURCE_DIR}/lib3party/php ${PROJECT_SOURCE_DIR}/lib3party/php/embed 
             ${PROJECT_SOURCE_DIR}/lib3party/php/main ${PROJECT_SOURCE_DIR}/lib3party/php/Zend
@@ -78,19 +78,19 @@ set(WORKER_PHP_SRC_LIST
     ${PROJECT_SOURCE_DIR}/workerphp/ffworker_php.cpp
     ${PROJECT_SOURCE_DIR}/workerphp/main.cpp
 )
-add_executable(h2engine ${ENGINE_SRC_LIST})
-target_link_libraries(h2engine pthread dl mysqlclient crypto ssl z curl)
+add_executable(worm ${ENGINE_SRC_LIST})
+target_link_libraries(worm pthread dl mysqlclient crypto ssl z curl)
 
-add_executable(h2workerpy ${WORKER_PY_SRC_LIST})
-target_link_libraries(h2workerpy pthread dl mysqlclient crypto ssl z curl python2.7)
+add_executable(pyhole ${WORKER_PY_SRC_LIST})
+target_link_libraries(pyhole pthread dl mysqlclient crypto ssl z curl python2.7)
 
-add_executable(h2workerlua ${WORKER_LUA_SRC_LIST})
-target_link_libraries(h2workerlua pthread dl mysqlclient crypto ssl z curl lua)
+add_executable(luahole ${WORKER_LUA_SRC_LIST})
+target_link_libraries(luahole pthread dl mysqlclient crypto ssl z curl lua)
 
-add_executable(h2workerjs ${WORKER_JS_SRC_LIST})
-target_link_libraries(h2workerjs pthread dl mysqlclient crypto ssl z curl v8)
+add_executable(jshole ${WORKER_JS_SRC_LIST})
+target_link_libraries(jshole pthread dl mysqlclient crypto ssl z curl v8)
 
-add_executable(h2workerphp ${WORKER_PHP_SRC_LIST})
-target_link_libraries(h2workerphp pthread dl mysqlclient crypto ssl z curl php5)
+add_executable(phphole ${WORKER_PHP_SRC_LIST})
+target_link_libraries(phphole pthread dl mysqlclient crypto ssl z curl php5)
 
 
