@@ -1,3 +1,16 @@
+var http = require('http')
+var options ={
+    hostname:'127.0.0.1',
+    path:'/get_server_info?time=100000',
+    method:'GET'
+}
+http.request(options,function(res){
+    res.setEncoding('utf8');
+    res.on('data',function(chunk){
+        console.log("0000000000000000000000000",chunk)
+    })
+})
+
 function init(){
     h2ext.print("js init ok");
 }

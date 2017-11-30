@@ -1,6 +1,8 @@
 # -*- coding: utf-8 -*-
 
 import h2ext
+import cPickle
+import numpy as np
 
 def cleanup():
     print('py init.....')
@@ -53,6 +55,14 @@ def when_syncSharedData(cmd, data):
 #print('ret', type(ret), ret)
 def testScriptCall(arg1 = 0, arg2 = 0, arg3 = 0, arg4 = 0, arg5 = 0, arg6 = 0, arg7 = 0, arg8 = 0, arg9 = 0):
     print('testScriptCall', arg1, arg2, arg3, arg4, arg5, arg6, arg7, arg8, arg9)
+    ## TEST
+    print("Come to test...................................")
+    data =[1,2,3,4,5,6]
+    str_d = cPickle.dumps(data)
+    print("py cpickle====>",str_d)
+
+    a = np.arange(20).reshape(4,5);
+    print("numpy test====>",a)
     return 1122334
 h2ext.callFunc("Cache.set", "b", "bbbb")
 h2ext.callFunc("Cache.set", "m.n[10]", "mmm1")

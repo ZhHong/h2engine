@@ -9,3 +9,6 @@
 6,mongodb扩展。
 7,测试。
 8,各个语言demo。
+
+python 可以直接用内置库
+JS 不行
